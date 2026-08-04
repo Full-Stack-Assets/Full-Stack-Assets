@@ -21,6 +21,8 @@ Operational counts above describe deployed infrastructure and workflow activity,
 - **[HostGraph](https://github.com/Full-Stack-Assets/HostGraph-Procurement-Command-Center)** — React and TypeScript procurement command-center prototype with explicit API boundaries and mock-data fallback.
 - **[SelfLLM](https://github.com/Full-Stack-Assets/SelfLLM)** — Python language-model research implementation spanning training, evaluation, serving, adapters, and deployment tooling.
 
+Repository hygiene for remaining weaker public repos is maintained separately in [REPO_CREDIBILITY_HARDENING.md](./REPO_CREDIBILITY_HARDENING.md).
+
 ## Engineering focus
 
 - TypeScript, JavaScript, Python, React, and Next.js
