@@ -1,0 +1,60 @@
+name: Validate service catalog
+
+on:
+  pull_request:
+    paths:
+      - "service-catalog/**"
+      - "service-catalog.schema.json"
+      - ".github/workflows/validate-service-catalog.yml"
+  push:
+    branches: [main]
+    paths:
+      - "service-catalog/**"
+      - "service-catalog.schema.json"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install validator
+        run: python -m pip install --disable-pip-version-check "jsonschema[format]>=4.23,<5"
+      - name: Validate catalog entries
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator, FormatChecker
+
+          schema = json.loads(Path("service-catalog.schema.json").read_text())
+          validator = Draft202012Validator(schema, format_checker=FormatChecker())
+          entries = sorted(Path("service-catalog").glob("*.json"))
+          if not entries:
+              raise SystemExit("No service-catalog entries found")
+
+          failed = False
+          repositories = set()
+          for entry in entries:
+              value = json.loads(entry.read_text())
+              errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+              repository = value.get("repository")
+              if repository in repositories:
+                  print(f"{entry}: duplicate repository {repository}")
+                  failed = True
+              repositories.add(repository)
+              for error in errors:
+                  location = ".".join(str(part) for part in error.path) or "<root>"
+                  print(f"{entry}:{location}: {error.message}")
+                  failed = True
+
+          if failed:
+              raise SystemExit(1)
+          print(f"Validated {len(entries)} service-catalog entries")
+          PY
