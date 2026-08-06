@@ -1,0 +1,18 @@
+{
+  "repository": "Full-Stack-Assets/The-Narrows",
+  "product": "The Narrows",
+  "owner": "Full-Stack-Assets",
+  "tier": 2,
+  "status": "release-candidate",
+  "runtime": ["godot-4.6", "webassembly"],
+  "deployment": {
+    "web": "vercel"
+  },
+  "domain": null,
+  "secret_names": [],
+  "health_url": null,
+  "required_checks": ["godot-import", "headless-smoke", "web-export", "browser-acceptance", "asset-integrity"],
+  "slo": null,
+  "last_verified": "2026-08-06",
+  "notes": "Draft PR #86 has successful import/export evidence but remains blocked on browser, gameplay, performance, audio-normalization, telemetry, and rollback qualification tracked in issue #87."
+}
