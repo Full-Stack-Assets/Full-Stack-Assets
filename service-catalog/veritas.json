@@ -1,0 +1,24 @@
+{
+  "repository": "Full-Stack-Assets/Veritas",
+  "product": "Veritas",
+  "owner": "Full-Stack-Assets",
+  "tier": 2,
+  "status": "release-candidate",
+  "runtime": ["python-3.11", "python-3.12", "fastapi"],
+  "deployment": {
+    "frontend": "vercel",
+    "api": "render"
+  },
+  "domain": null,
+  "data": {
+    "store": "sqlite",
+    "persistent": true,
+    "backup_documented": false
+  },
+  "secret_names": ["ANTHROPIC_API_KEY", "ADMIN_KEY"],
+  "health_url": "/health",
+  "required_checks": ["python-3.11-tests", "python-3.12-tests", "tenant-isolation", "production-smoke"],
+  "slo": null,
+  "last_verified": "2026-08-06",
+  "notes": "Tenant security is merged. PR #17 restricts frontend API origins and is undergoing final-head CI verification."
+}
