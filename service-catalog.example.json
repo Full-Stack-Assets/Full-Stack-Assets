@@ -1,0 +1,23 @@
+{
+  "repository": "Full-Stack-Assets/WireandLogic",
+  "product": "Wire and Logic",
+  "owner": "Nic",
+  "tier": 2,
+  "status": "release-candidate",
+  "runtime": ["node-20", "typescript"],
+  "deployment": {
+    "web": "vercel"
+  },
+  "domain": "wireandlogic.com",
+  "data": {
+    "store": null,
+    "persistent": false,
+    "backup_documented": false
+  },
+  "secret_names": ["BRAVE_API_KEY"],
+  "health_url": null,
+  "required_checks": ["test", "build", "security-review"],
+  "slo": null,
+  "last_verified": "2026-08-06",
+  "notes": "SSRF-safe remote fetching is a release requirement."
+}

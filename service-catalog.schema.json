@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fullstackassets.com/schemas/service-catalog.schema.json",
+  "title": "Full-Stack-Assets Service Catalog Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "repository",
+    "product",
+    "owner",
+    "tier",
+    "status",
+    "runtime",
+    "deployment",
+    "required_checks",
+    "last_verified"
+  ],
+  "properties": {
+    "repository": {
+      "type": "string",
+      "pattern": "^[^/]+/[^/]+$"
+    },
+    "product": { "type": "string", "minLength": 1 },
+    "owner": { "type": "string", "minLength": 1 },
+    "tier": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "status": {
+      "enum": ["experiment", "prototype", "release-candidate", "production", "revenue-critical", "archived"]
+    },
+    "runtime": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "minProperties": 1
+    },
+    "domain": {
+      "type": ["string", "null"]
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "store": { "type": ["string", "null"] },
+        "persistent": { "type": "boolean" },
+        "backup_documented": { "type": "boolean" }
+      }
+    },
+    "secret_names": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "health_url": {
+      "type": ["string", "null"]
+    },
+    "required_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "slo": {
+      "type": ["string", "null"]
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
