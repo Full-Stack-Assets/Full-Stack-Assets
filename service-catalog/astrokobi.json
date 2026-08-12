@@ -6,13 +6,13 @@
   "status": "release-candidate",
   "runtime": ["node-24", "nextjs-15", "react-19"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": "astrokobi.com",
   "secret_names": ["GROQ_API_KEY", "BRAVE_API_KEY", "PEXELS_API_KEY"],
   "health_url": null,
   "required_checks": ["typecheck", "build", "content-review", "preview-review"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "PR #47 separates candidate generation from production deployment. A focused unit-test harness remains required before production-tier classification."
+  "last_verified": "2026-08-12",
+  "notes": "Production deployment remains unverified. Candidate generation is separate from promotion, and a focused unit-test harness remains required before production-tier classification."
 }

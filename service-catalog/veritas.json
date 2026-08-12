@@ -6,7 +6,7 @@
   "status": "release-candidate",
   "runtime": ["python-3.11", "python-3.12", "fastapi"],
   "deployment": {
-    "frontend": "vercel",
+    "frontend": "unverified",
     "api": "render"
   },
   "domain": null,
@@ -19,6 +19,6 @@
   "health_url": "/health",
   "required_checks": ["python-3.11-tests", "python-3.12-tests", "tenant-isolation", "production-smoke"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "Tenant security is merged. PR #17 restricts frontend API origins and is undergoing final-head CI verification."
+  "last_verified": "2026-08-12",
+  "notes": "Frontend deployment remains unverified. Tenant security is merged; frontend API origins still require final-head verification."
 }

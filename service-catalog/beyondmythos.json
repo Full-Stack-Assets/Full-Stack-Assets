@@ -6,13 +6,13 @@
   "status": "release-candidate",
   "runtime": ["node-22", "express"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": "beyondmythos.com",
   "secret_names": ["GROQ_API_KEY", "OPENROUTER_API_KEY", "OPENAI_API_KEY", "GEMINI_API_KEY"],
   "health_url": null,
   "required_checks": ["unit-tests", "content-review", "promotion-review"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "PR #19 separates autonomous generation from production deployment and passed its Node test workflow."
+  "last_verified": "2026-08-12",
+  "notes": "Production deployment remains unverified. Autonomous generation and production promotion are separate gates."
 }
