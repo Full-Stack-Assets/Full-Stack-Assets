@@ -1,0 +1,17 @@
+{
+  "name": "@full-stack-assets/contra-operator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy and evidence sidecar for operating Contra through Contra's official MCP authority.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs"
+  },
+  "files": ["dist", "README.md", ".env.example", "plugin.json"],
+  "bin": {
+    "contra-operator": "dist/index.js"
+  }
+}
