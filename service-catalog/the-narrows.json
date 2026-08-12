@@ -6,13 +6,13 @@
   "status": "release-candidate",
   "runtime": ["godot-4.6", "webassembly"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": null,
   "secret_names": [],
   "health_url": null,
   "required_checks": ["godot-import", "headless-smoke", "web-export", "browser-acceptance", "asset-integrity"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "Draft PR #86 has successful import/export evidence but remains blocked on browser, gameplay, performance, audio-normalization, telemetry, and rollback qualification tracked in issue #87."
+  "last_verified": "2026-08-12",
+  "notes": "Production deployment remains unverified. Import/export evidence exists, while browser, gameplay, performance, audio-normalization, telemetry, and rollback qualification remain open."
 }

@@ -6,13 +6,13 @@
   "status": "release-candidate",
   "runtime": ["node-20", "nextjs-15", "react-19"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": "moviesrule.com",
   "secret_names": ["GROQ_API_KEY", "OPENROUTER_API_KEY", "BRAVE_API_KEY", "PEXELS_API_KEY"],
   "health_url": null,
   "required_checks": ["typecheck", "test-typecheck", "lint", "unit-tests", "build", "content-review"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "PR #24 separates candidate generation from production deployment and is awaiting final-head CI."
+  "last_verified": "2026-08-12",
+  "notes": "Production deployment remains unverified. Candidate generation and production promotion are separate gates."
 }

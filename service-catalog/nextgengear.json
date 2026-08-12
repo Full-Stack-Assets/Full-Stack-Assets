@@ -4,15 +4,15 @@
   "owner": "Full-Stack-Assets",
   "tier": 2,
   "status": "release-candidate",
-  "runtime": ["node-20", "nextjs-15", "react-19"],
+  "runtime": ["node-22", "nextjs-15", "react-19"],
   "deployment": {
-    "web": "vercel"
+    "web": "github-pages"
   },
   "domain": "nextgengear.cc",
   "secret_names": ["GROQ_API_KEY", "OPENROUTER_API_KEY", "BRAVE_API_KEY", "PEXELS_API_KEY"],
   "health_url": null,
   "required_checks": ["typecheck", "unit-tests", "content-validation", "build"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "PR #18 moves generated content to a candidate branch. Current CI failure identified one malformed generated MDX post; repair is under verification."
+  "last_verified": "2026-08-12",
+  "notes": "The repository contains a GitHub Pages workflow, static artifact verification, and a custom-domain CNAME. Hosting cleanup and automation repair are under PR #25 verification."
 }

@@ -6,13 +6,13 @@
   "status": "release-candidate",
   "runtime": ["node-20", "nextjs"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": "wireandlogic.com",
   "secret_names": ["BRAVE_API_KEY"],
   "health_url": null,
   "required_checks": ["typecheck", "unit-tests", "build", "security-review"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "SSRF hardening PR #57 passed CI and is awaiting security review."
+  "last_verified": "2026-08-12",
+  "notes": "Production deployment remains unverified. SSRF hardening passed CI and still requires final security review."
 }

@@ -6,7 +6,7 @@
   "status": "release-candidate",
   "runtime": ["node-20", "typescript"],
   "deployment": {
-    "web": "vercel"
+    "web": "unverified"
   },
   "domain": "wireandlogic.com",
   "data": {
@@ -18,6 +18,6 @@
   "health_url": null,
   "required_checks": ["test", "build", "security-review"],
   "slo": null,
-  "last_verified": "2026-08-06",
-  "notes": "SSRF-safe remote fetching is a release requirement."
+  "last_verified": "2026-08-12",
+  "notes": "Deployment provider must be recorded only after independent verification. SSRF-safe remote fetching is a release requirement."
 }
