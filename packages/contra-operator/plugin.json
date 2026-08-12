@@ -1,0 +1,10 @@
+{
+  "name": "contra-operator",
+  "version": "0.1.0",
+  "kind": "mcp-policy-sidecar",
+  "transport": "stdio",
+  "command": "node",
+  "args": ["dist/index.js"],
+  "authority": "Contra official MCP",
+  "defaultAutonomy": "tiered"
+}
